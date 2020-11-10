@@ -1,8 +1,8 @@
 var x=3; 
 var y=3;
-var c=0;
-while(c<10){
-    console.log("3^"+(c+1) +"- " +x);
-    x=x*y;
+var c=1;
+while(c<=10){
+    y=Math.pow(x,c);
+    console.log(y);
     c++;
 }
