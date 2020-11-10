@@ -4,24 +4,24 @@ switch(x%7){
     case 0 :
         dia="Lunes";
         break;
-    case 1 :
+    case 6 :
         dia="Martes";
         break;
-    case 2 :
+    case 5 :
         dia="Miercoles";
         break;
-    case 3 :
+    case 4 :
         dia="Jueves";
         break;
-    case 4 :
+    case 3 :
         dia="Viernes";
         break;
-    case 5 :
+    case 2 :
         dia="Sabado";
         break;
-    case 6 :
+    case 1 :
         dia="Domingo";
         break;
         
 }
-console.log("Si hoy es lunes en 11 dias es "+dia);
+console.log("Si hoy es lunes hace 11 dias fue "+dia);
