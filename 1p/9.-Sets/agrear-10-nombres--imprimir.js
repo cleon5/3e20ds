@@ -1,4 +1,12 @@
-
-
-
-
+let nombres = new Set();
+setn.add('luis');
+setn.add('daniel');
+setn.add('Fausta');
+setn.add('Lalo');
+setn.add('Laura');
+setn.add('Axel');
+setn.add('Angel');
+setn.add('Paco');
+setn.add('Lili');
+setn.add('Pepe');
+console.log(nombres);

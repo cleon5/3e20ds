@@ -1,12 +1,42 @@
-var c=0;
-var ramdom;
-var num=100000
-while(c<num){
-    ramdom=Math.round(Math.random()*(1*9999)*1);
-    console.log(ramdom);
-    c++;
-}
 
+let n = [];
+let x = 10; 
+let inversiones = 0;
+
+for(z = 0; z < x; z++) {
+    n.push(Math.round(Math.random()*Math.pow(10,4)))
+}
+console.log("Como viene por defecto :") 
+for(x = 0; x < n.length; x++)
+{
+   console.log( "Ubicación [",x,"] =",n[x] )
+   
+   inversiones++;
+}
+function funcionOrdenar ()
+{
+ for(i = 0; i < n.length; i++)
+   for(j = 0; j< n.length ; j++)
+   {
+      if(n[j]>n[j+1])
+      {
+          let a = n[j]        
+          n[j] = n[j + 1];    
+          n[j + 1] = a        
+      
+          inversiones++;
+        }
+    }
+ console.log("\nOrdenado : ")
+ for(i = 0; i < n.length; i++)
+{
+   console.log( "Ubicación [",i,"] =",n[i] )
+}
+}
+console.time()
+console.timeEnd();
+funcionOrdenar();
+console.log("inversiones necesarias:", inversiones)
 
 
 /*

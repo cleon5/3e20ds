@@ -1,0 +1,12 @@
+let map = new Map();
+map.set(1,'luis');
+map.set(2,'daniel');
+map.set(3,'Fausta');
+map.set(4,'Lalo');
+map.set(5,'Laura');
+map.set(6,'Axel');
+map.set(7,'Angel');
+map.set(8,'Paco');
+map.set(9,'Lili');
+map.set(10,'Pepe');
+console.log(map);
