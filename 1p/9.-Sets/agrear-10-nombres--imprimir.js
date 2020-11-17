@@ -1,4 +1,4 @@
-let nombres = new Set();
+let setn= new Set();
 setn.add('luis');
 setn.add('daniel');
 setn.add('Fausta');
@@ -9,4 +9,4 @@ setn.add('Angel');
 setn.add('Paco');
 setn.add('Lili');
 setn.add('Pepe');
-console.log(nombres);
+console.log(setn);

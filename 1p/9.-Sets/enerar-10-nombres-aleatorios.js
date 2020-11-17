@@ -1,18 +1,16 @@
 var name = new Set();
-var Silabas=['a','e','i','o','u'];
-var Consonantes=['b','c','d','f','g','j','k','l','m','p','r','v'];
-
-for(let s=0;s<=9;s++){
-    var name_aux='';
-    
+var silaba=['a','e','i','o','u'];
+var cons=['b','c','d','f','g','j','k','l','m','p','r','v'];
+var c=0;
+while(c<10){
+    var nombre='';
     for(let s=0;s<=Math.random()*2;s++){
-        name_aux+=(Consonantes[Math.floor(Math.random()*Consonantes.length)]);
-        name_aux+=(Silabas[Math.floor(Math.random()*Silabas.length)]);
-        name_aux+=(Consonantes[Math.floor(Math.random()*Consonantes.length)]);
-        name_aux+=(Silabas[Math.floor(Math.random()*Silabas.length)]);
+        nombre+=(cons[Math.floor(Math.random()*cons.length)]);
+        nombre+=(silaba[Math.floor(Math.random()*silaba.length)]);
+        nombre+=(cons[Math.floor(Math.random()*cons.length)]);
+        nombre+=(silaba[Math.floor(Math.random()*silaba.length)]);
     }
-    
-    name.add(name_aux);
-
+    name.add(nombre);
+    c++;
 }   
-console.log(name);   
+console.log(name);      
