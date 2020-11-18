@@ -1,48 +1,24 @@
-
-let n = [];
-let x = 10; 
-let inversiones = 0;
-
-for(z = 0; z < x; z++) {
-    n.push(Math.round(Math.random()*Math.pow(10,4)))
-}
-console.log("Como viene por defecto :") 
-for(x = 0; x < n.length; x++)
-{
-   console.log( "Ubicación [",x,"] =",n[x] )
-   
-   inversiones++;
-}
-function funcionOrdenar ()
-{
- for(i = 0; i < n.length; i++)
-   for(j = 0; j< n.length ; j++)
-   {
-      if(n[j]>n[j+1])
-      {
-          let a = n[j]        
-          n[j] = n[j + 1];    
-          n[j + 1] = a        
-      
-          inversiones++;
+let array=new Array(10000);                          
+let c=0;
+console.time();
+for(let i=1;i<=10000;i++){  
+    array[i]=Math.round(Math.random()*(1-1000000)+100000);                          
+const bubbleSort = arr => {
+    const l = arr.length;
+    for (let i=0; i<l; i++) {
+      for (let j=0; j<l-1-i; j++) {
+        if (arr[j]>arr[j+1]) {
+          [arr[j], arr[j+1]] = [arr[j+1], arr[j]];
+          c++;
         }
+      }
     }
- console.log("\nOrdenado : ")
- for(i = 0; i < n.length; i++)
-{
-   console.log( "Ubicación [",i,"] =",n[i] )
+    return arr;
+  };
+  const result=bubbleSort(array);
+for(let i=1;i<=1000000;i++){
+    console.log(i+"- "+result[i]);   
 }
+  
+console.timeEnd()
 }
-console.time()
-console.timeEnd();
-funcionOrdenar();
-console.log("inversiones necesarias:", inversiones)
-
-
-/*
-¿cuantas inversiones requiere cada uno en promedio?
-
-¿cuantas tiempo toma cada uno en promedio?
-
-¿podemos mejorar el tiempo de ejecución? ¿cómo?
-*/

@@ -1,4 +1,4 @@
-var x=8
+var x=4
 var cont=0;
 var z=1;
 while(cont<x){
