@@ -20,5 +20,6 @@ function Per (s)
 }
 console.time()
 console.log(Per(s))
+
 console.timeEnd()
 console.log("Complejidad Exponencial");
