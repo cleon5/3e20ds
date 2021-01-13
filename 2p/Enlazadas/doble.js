@@ -122,7 +122,7 @@ class doble {
         let current = this.head
         let resul="";
         while(current){
-            resul+=current.data+"<->";
+            resul+=current.data+"<>";
             current=current.next;
         }
         return resul+= "X"
@@ -147,7 +147,7 @@ listadoble.insertAct(42,2)
 listadoble.insertAct(24,2)
 console.log(listadoble.print())
 console.log(listadoble.remove(5))
-console.log(listadoble.print())
+console.log(listadoble.reversePrint())
 
 
 

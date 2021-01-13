@@ -23,11 +23,12 @@ class Enlazada{
         }
         this.tamaño ++;
     }
+
 }
 let lista = new Enlazada()
 console.log(lista);
 lista.AgregarDato(10);
-lista.AgregarDato("Algo");
+//lista.AgregarDato("Algo");
 lista.AgregarDato(1);
 lista.AgregarDato(31);
 console.log(lista);

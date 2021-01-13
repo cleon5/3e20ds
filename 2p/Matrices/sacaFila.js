@@ -17,6 +17,7 @@ b.addListener("data", function(n) {
     process.exit();
 })
 class SacaFila {
+
     static fila() {
         for (let i = 0; i < matriz[0][Array.length+1]; i++) {
             fila[i] = matriz[x][i];
