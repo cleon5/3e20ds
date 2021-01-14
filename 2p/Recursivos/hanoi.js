@@ -1,10 +1,10 @@
 
-function hanoi(numero_discos, inicio, fin){
-    if(numero_discos>0)
+function hanoi(numdis, inicio, fin){
+    if(numdis>0)
     {
-        hanoi(numero_discos-1, inicio, 6-inicio-fin); //del actual a la auxiliar
-        console.log("Mueve el disco "+ numero_discos + " de la torre " + inicio + " a la torre "+ fin);
-        hanoi(numero_discos-1, 6-inicio-fin, fin); //de la auxiliar a la final
+        hanoi(numdis-1, inicio, 6-inicio-fin);
+        console.log("Disco "+ numdis + " de torre " + inicio + " a torre "+ fin);
+        hanoi(numdis-1, 6-inicio-fin, fin);
     }
 }
 hanoi(4,1,3);

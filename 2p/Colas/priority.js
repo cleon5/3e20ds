@@ -4,7 +4,6 @@ function ColaPrioridad(){
     this.dequeue=dequeue;
     this.primero=primero;
     this.longitud= longitud;
-    this.,algo=algo
 
     function enqueue (element){
         this.dato.push(element);
@@ -39,9 +38,12 @@ n.enqueue(new paciente("Lopez", 4));
 n.enqueue(new paciente("paredes", 2));
 n.enqueue(new paciente("Perez", 3));
 n.enqueue(new paciente("Mendez", 5));
-//cola.enqueue(paciente("pepe", 4))
+
+console.log("La Cola tiene una longitud de ")
 console.log(n.longitud())
+console.log("El primer valor de la cola es ");
 console.log(n.primero())
+console.log("Sacando valores de la Cola en orden")
 console.log(n.dequeue())
 console.log(n.dequeue())
 console.log(n.dequeue())

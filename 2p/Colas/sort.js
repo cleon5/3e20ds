@@ -65,6 +65,11 @@ var nums = [];
 for (var i = 0; i < 10; ++i) {
     nums[i] = Math.floor(Math.floor(Math.random() * 101));
 }
+
+var queues= new Queue();
+var nums=[];
+
+
 console.log("Before radix sort: ");
 dispArray(nums);
 distribute(nums, queues, 10, 1);
