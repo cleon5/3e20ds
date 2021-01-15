@@ -9,38 +9,56 @@ class Cola{
     quitar(){
         return this.algo.shift();
     }
-    cadena() {
-        let x = "";
-        for (let i = 0; i < this.algo.length; i++) {
-            x += this.dato[i] + "\n";
-        }
-    }
-    size(){
-        return this.algo.length;
-    }
-    primero(){
+    primero() {
         return this.algo[0];
-    }
-    ordenar(nums, cola, n, digito) {
-        for (let i = 0; i < n; i++) {
-            if (digito == 1) {
-                this.algo(nums[i] % 10).agregar(nums[i]);
-            } else {
-                this.algo[Math.floor(nums[i]) / 10].agregar(nums[i]);
-            }
-        }
+        //console.log(this.algo[0])
     }
     mostrar(){
         return this.algo;
     }
+    vacio(){
+        if (this.algo.length == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
-let x= new Cola();
-x.agregar(43)
-x.agregar(44)
-x.agregar(54)
-x.agregar(66)
-x.agregar(12)
-x.agregar(13);
-console.log(x.mostrar())
 
+function Dancer(name, sex) {
+    this.name = name;
+    this.sex = sex;
+}
 
+function dance(hom, muj) {
+    console.log("The dance partners are: \n");
+    while (!muj.vacio() && !hom.vacio()) {
+        person = muj.quitar();
+        console.log("Female dancer is: " + person.name);
+        person = hom.quitar();
+        console.log(" and the male dancer is: " + person.name);
+    }
+    console.log();
+}
+let hombre = new Cola();
+let mujer = new Cola();
+
+hombre.agregar(new Dancer("Luis", "h"))
+hombre.agregar(new Dancer("Pedro", "h"))
+hombre.agregar(new Dancer("Lalo", "h"))
+hombre.agregar(new Dancer("Norman", "h"))
+hombre.agregar(new Dancer("Norman", "h"))
+
+mujer.agregar(new Dancer("Norma","m"))
+mujer.agregar(new Dancer("lola","m"))
+mujer.agregar(new Dancer("Camila","m"))
+mujer.agregar(new Dancer("Fiona","m"))
+
+dance(hombre,mujer)
+if (!mujer.vacio()) {
+    console.log(mujer.primero().name + " is waiting to dance.");
+}
+if (!hombre.vacio()) {
+    console.log(hombre.primero().name + " is waiting to dance.");
+}

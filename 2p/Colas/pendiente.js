@@ -1,7 +1,7 @@
 class Cola{
     constructor() {
         this.algo=[]
-        //this.nums=[];
+        this.nums=[];
     }
     agregar(element){
         this.algo.push(element);
@@ -28,10 +28,19 @@ class Cola{
             return false;
         }
     }
-    ordenar(nums, n, digito) {
+    ordenar2(n, dijito){
         for (let i = 0; i < n; i++) {
             if (digito == 1) {
                 this.algo[nums[i] % 10].agregar(nums[i]);
+            } else {
+                this.algo[Math.floor(nums[i]) / 10].agregar(nums[i]);
+            }
+        }
+    }
+    ordenar( n, digito) {
+        for (let i = 0; i < n; i++) {
+            if (digito == 1) {
+                this.algo[nums[i]%10].agregar[this.nums[i]];
             } else {
                 this.algo[Math.floor(nums[i]) / 10].agregar(nums[i]);
             }
@@ -61,7 +70,7 @@ x.agregar(54)
 x.agregar(66)
 x.agregar(12)
 x.agregar(13);
-x.ordenar(nums, 10, 1)
-x.collect(nums)
+x.ordenar( 10, 1)
+x.collect()
 console.log(x.mostrar())
 console.log(x.mostrar2())

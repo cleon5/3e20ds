@@ -1,46 +1,35 @@
-class Cola{
+class Pila{
     constructor() {
-        this.algo=[];
+        this.pila=[]
+        this.top=0;
     }
-    agregar(element){
-        this.algo.push(element)
-        return this.algo;
+    agregar(algo){
+        this.pila[this.top++] = algo
     }
-    quitar(){
-        return this.algo.shift();
+    quitar2(){
+        return this.pila[--this.top]
     }
-    size(){
-        return this.algo.length;
-    }
-    primero(){
-        return this.algo[0];
-    }
-    mostrar(){
-        return this.algo;
-    }
-    pop(){
-        return this.pop();
-    }
-}
-function factorial(n) {
-    if (n === 0) {
-        return 1;
-    }
-    else {
-        return n * factorial(n-1);
+    tamaño(){
+        return this.top;
     }
 }
 
-function fact(n) {
-    var s = new Cola();
-    while (n > 1) {
-        s.agregar(n--);
+function Conversion(num, base) {
+    let pila = new Pila();
+    let num2=num;
+    do {
+        pila.agregar(num % base);
+        num = Math.floor(num /= base);
     }
-    var product = 1;
-    while (s.size() > 0) {
-        product *= s.pop();
+    while (num > 0);
+    let converted = "";
+    while (pila.tamaño() > 0) {
+        converted += pila.quitar2();
     }
-    return product;
+    console.log(num2 +" Convertido a base "+ base + " es "+converted);
+    return converted;
 }
-console.log(factorial(5)); // displays 120
-console.log(fact(5)); // displays 120
+Conversion(32,2)
+Conversion(125,8)
+Conversion(16,2)
+Conversion(100,10)

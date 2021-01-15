@@ -1,80 +1,48 @@
-function Queue() {
-    this.dataStore = [];
-    this.enqueue = enqueue;
-    this.dequeue = dequeue;
-    this.front = front;
-    this.back = back;
-    this.toString = toString;
-    this.empty = empty;
-}
-function enqueue(element) {
-    this.dataStore.push(element);
-}
-function dequeue() {
-    return this.dataStore.shift();
-}
-function front() {
-    return this.dataStore[0];
-}
-function back() {
-    return this.dataStore[this.dataStore.length-1];
-}
-function toString() {
-    var retStr = "";
-    for (var i = 0; i < this.dataStore.length; ++i) {
-        retStr += this.dataStore[i] + "\n";
+class Cola{
+    constructor() {
+        this.cola=[]
+        this.vec=[]
     }
-    return retStr;
-}
-function empty() {
-    if (this.dataStore.length == 0) {
-        return true;
-    } else {
-        return false;
+    agregar(element){
+        this.cola.push(element);
     }
-}
-function distribute(nums, queues, n, digit) {
-    for (var i = 0; i < n; ++i) {
-        if (digit == 1) {
-            queues[nums[i]%10].enqueue(nums[i]);
+    ordenar(){
+        let ban;
+        let aux;
+        let c=0
+        while(this.cola.length>0){
+            this.vec[c]=this.cola.shift()
+            c++
         }
-        else {
-            queues[Math.floor(nums[i] / 10)].enqueue(nums[i]);
+        ban=false;
+        while (!ban){
+            ban=true;
+            for(let i=0; i<3; i++){
+                if(this.vec[i]>this.vec[i+1]){
+                    aux=this.vec[i+1];
+                    this.vec[i+1]=this.vec[i];
+                    this.vec[i]= aux
+                    ban=false
+                }
+            }
+        }
+        for (let j=0;j<4;j++){
+            this.cola.push(this.vec[j])
+
         }
     }
-}
-function collect(queues, nums) {
-    var i = 0;
-    for (var digit = 0; digit < 10; ++digit) {
-        while (!queues[digit].empty()) {
-            nums[i++] = queues[digit].dequeue();
-        }
+    mostrar(){
+        return this.cola;
     }
 }
-function dispArray(arr) {
-    for (var i = 0; i < arr.length; ++i) {
-        console.log(arr[i] + " ");
-    }
-}
-// main program
-var queues = [];
-for (var i = 0; i < 10; ++i) {
-    queues[i] = new Queue();
-}
-var nums = [];
-for (var i = 0; i < 10; ++i) {
-    nums[i] = Math.floor(Math.floor(Math.random() * 101));
-}
 
-var queues= new Queue();
-var nums=[];
-
-
-console.log("Before radix sort: ");
-dispArray(nums);
-distribute(nums, queues, 10, 1);
-collect(queues, nums);
-distribute(nums, queues, 10, 10);
-collect(queues, nums);
-console.log("\n\nAfter radix sort: ");
-dispArray(nums);
+cola=new Cola()
+cola.agregar(71)
+cola.agregar(12)
+cola.agregar(75)
+cola.agregar(55)
+console.log("Cola original")
+console.log(cola.mostrar())
+cola.ordenar()
+console.log("Cola ordenada")
+console.log(cola.mostrar())
