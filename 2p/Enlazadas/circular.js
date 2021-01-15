@@ -1,3 +1,4 @@
+
 class Nodo{
     constructor(dato, next){
         this.dato = dato;
@@ -41,7 +42,7 @@ class Enlazada{
             }
             nuevoNodo.next=actual;
             prev.next=nuevoNodo
-            //nuevoNodo.next=this.inicio;
+            nevoNodo.next=this.inicio;
         }
         this.tamaño++;
     }
@@ -84,8 +85,9 @@ lista.AgregarDato(1);
 lista.AgregarDato(31);
 lista.insertar(3,1)
 console.log(lista.imp())
-lista.remove(3)
+
 console.log(lista.imp())
+
 
 
 /*
