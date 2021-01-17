@@ -3,6 +3,7 @@ class Nodo{
     constructor(dato, next){
         this.dato = dato;
         this.next = next;
+        this.prev=null;
     }
 }
 class Enlazada{
@@ -14,13 +15,16 @@ class Enlazada{
         let nuevoNodo= new Nodo(dato,null);
         if (!this.inicio){
             this.inicio=nuevoNodo;
+            nuevoNodo.prev=nuevoNodo;
+
         }
         else{
             let actual=this.inicio;
-            while (actual.next){
-                actual=actual.next;
-            }
+            let tail= this.inicio.prev;
             actual.next=nuevoNodo;
+            nuevoNodo.prev=tail;
+            nuevoNodo.next=this.inicio
+            this.inicio.prev=nuevoNodo
         }
         this.tamaño ++;
     }
@@ -83,7 +87,7 @@ lista.AgregarDato(10);
 lista.AgregarDato("Algo");
 lista.AgregarDato(1);
 lista.AgregarDato(31);
-lista.insertar(3,1)
+//lista.insertar(3,1)
 console.log(lista.imp())
 
 console.log(lista.imp())

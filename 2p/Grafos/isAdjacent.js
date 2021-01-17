@@ -2,7 +2,7 @@ class Gexample{
     getloopy(){
         return [
             [1,1]
-            [1,0]
+                [1,0]
         ]
     }
     cnew(){
@@ -11,17 +11,17 @@ class Gexample{
     undirected(){
         return[
             [0,1,0,0]
-            [1,0,1,1]
-            [0,1,0,1]
-            [0,1,1,0]
+                [1,0,1,1]
+                [0,1,0,1]
+                [0,1,1,0]
         ]
     }
     directed(){
         return[
             [0,1,0,0]
-            [0,0,1,0]
-            [0,0,0,1]
-            [0,1,0,0]
+                [0,0,1,0]
+                [0,0,0,1]
+                [0,1,0,0]
         ]
     }
 }
@@ -43,7 +43,7 @@ class Grafo{
         for(let i=0; i<this.n.length; i++) {
             for(let j=0; j<this.n.length; j++) {
                 if(this.n[i][j]===undefined)
-                this.n[i][j]=0;
+                    this.n[i][j]=0;
             }
         }
     }
@@ -63,13 +63,16 @@ class Grafo{
     tamaño(){//order
         console.log(this.n.length)
     }
-    removeEdge(x){
-        this.n[x]=
+    adj(a,b){
+        let x=this.toString()
+        if(this.n[a][b]==1){
+            console.log(a+" y "+b+ " Es adyacente")
+        }
+        else{
+            console.log(a+" y "+b+ " No es Adyacente")
+        }
     }
-
-
 }
-let s=new Gexample()
 let g= new Grafo([])
 g.addVertex(0)
 g.addVertex(1)
@@ -81,10 +84,9 @@ g.addEdge(1,2)
 g.addEdge(2,0)
 
 g.fill()
+g.toString()
 g.imprimir()
-
-//g.removeEdge(0,2)
-g.removeEdge(1)
-g.fill()
-g.imprimir()
-g.tamaño()
+console.log()
+g.adj(0,2)
+g.adj(1,2)
+g.adj(1,1)

@@ -1,4 +1,4 @@
-var n=3
+var n;
 function factorialRecursivo (n) { 
 	if (n == 0){ 
 		return 1; 

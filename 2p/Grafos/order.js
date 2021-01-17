@@ -1,31 +1,3 @@
-class Gexample{
-    getloopy(){
-        return [
-            [1,1]
-            [1,0]
-        ]
-    }
-    cnew(){
-        return []
-    }
-    undirected(){
-        return[
-            [0,1,0,0]
-            [1,0,1,1]
-            [0,1,0,1]
-            [0,1,1,0]
-        ]
-    }
-    directed(){
-        return[
-            [0,1,0,0]
-            [0,0,1,0]
-            [0,0,0,1]
-            [0,1,0,0]
-        ]
-    }
-}
-
 class Grafo{
     constructor(o) {
         this.n=o
@@ -43,7 +15,7 @@ class Grafo{
         for(let i=0; i<this.n.length; i++) {
             for(let j=0; j<this.n.length; j++) {
                 if(this.n[i][j]===undefined)
-                this.n[i][j]=0;
+                    this.n[i][j]=0;
             }
         }
     }
@@ -63,28 +35,26 @@ class Grafo{
     tamaño(){//order
         console.log(this.n.length)
     }
-    removeEdge(x){
-        this.n[x]=
+    removeEdge(i,j){
+        this.n[i][j]=0
+    }
+    order(){
+        let c=0
+        let a=this.toString()
+        for(let i=0;i< a.length;i++){
+            for(let j=0; j<a.length; j++){
+                if (a[i][j]==1)
+                    c++
+            }
+        }
+        console.log(c)
     }
 
-
 }
-let s=new Gexample()
-let g= new Grafo([])
-g.addVertex(0)
-g.addVertex(1)
-g.addVertex(2)
-
-g.addEdge(0,1)
-g.addEdge(0,2)
-g.addEdge(1,2)
-g.addEdge(2,0)
-
-g.fill()
+let g= new Grafo([
+    [0,1,0,0],
+    [0,0,1,0],
+    [1,0,0,1],
+    [0,1,0,0],])
 g.imprimir()
-
-//g.removeEdge(0,2)
-g.removeEdge(1)
-g.fill()
-g.imprimir()
-g.tamaño()
+g.order()

@@ -1,8 +1,5 @@
 var ramdom
-function aleatorio(){
-    ramdom=Math.round(Math.random()*10);
-    return ramdom;
-}
+function c
 
 console.log(aleatorio())
 console.log(aleatorio())
