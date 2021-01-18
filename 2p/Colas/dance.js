@@ -32,12 +32,12 @@ function Dancer(name, sex) {
 }
 
 function dance(hom, muj) {
-    console.log("The dance partners are: \n");
+    console.log("Pareja de baile: \n");
     while (!muj.vacio() && !hom.vacio()) {
         person = muj.quitar();
-        console.log("Female dancer is: " + person.name);
+        console.log("La mujer es: " + person.name);
         person = hom.quitar();
-        console.log(" and the male dancer is: " + person.name);
+        console.log(" y el hombre es: " + person.name);
     }
     console.log();
 }
@@ -57,8 +57,8 @@ mujer.agregar(new Dancer("Fiona","m"))
 
 dance(hombre,mujer)
 if (!mujer.vacio()) {
-    console.log(mujer.primero().name + " is waiting to dance.");
+    console.log(mujer.primero().name + " esta esperando.");
 }
 if (!hombre.vacio()) {
-    console.log(hombre.primero().name + " is waiting to dance.");
+    console.log(hombre.primero().name + " esta esperando.");
 }
