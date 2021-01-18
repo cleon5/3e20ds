@@ -45,16 +45,11 @@ class Grafo{
         }
     }
 }
-g.addVertex(0)
-g.addVertex(1)
-g.addVertex(2)
+let g=new Grafo([[0,1,0,0],
+    [1,0,1,0],
+    [0,0,0,1],
+    [0,1,0,0],])
 
-g.addEdge(0,1)
-g.addEdge(0,2)
-g.addEdge(1,2)
-g.addEdge(2,0)
-
-g.fill()
 g.toString()
 g.imprimir()
 console.log()
