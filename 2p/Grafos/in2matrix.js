@@ -1,3 +1,36 @@
+class Enlazada{
+    constructor() {
+        this.inicio=null;
+        this.tamaño=0;
+    }
+    AgregarDato(dato){
+        let nuevoNodo= new Nodo(dato,null);
+        if (!this.inicio){
+            this.inicio=nuevoNodo;
+        }
+        else{
+            let actual=this.inicio;
+            while (actual.next){
+                actual=actual.next;
+            }
+            actual.next=nuevoNodo;
+        }
+        this.tamaño ++;
+    }
+    imp(){
+        let actual=this.inicio;
+        let resultado="";
+        if(!this.tamaño){
+            return null
+        }
+        for(let i=0;i<this.tamaño; i++){
+            resultado=resultado + actual.dato + "->";
+            actual=actual.next;
+        }
+        return resultado
+    }
+}
+
 class Grafo{
     constructor(o) {
         this.n=o
@@ -35,9 +68,9 @@ class Grafo{
     list(x){
         let l= new Enlazada()
         let a=this.toString()
-        l.AgregarDato("Lista de "+x)
-        for(let i=0; i<a.length; i++){
-            if (this.n[x][i]==1){
+        console.log("Lista de "+x)
+        for(let i=0; i<this.n.length; i++){
+            if(this.n[x][i]==1){
                 l.AgregarDato(i)
             }
             else{
@@ -53,53 +86,12 @@ class Nodo{
         this.next = next;
     }
 }
-class Enlazada{
-    constructor() {
-        this.inicio=null;
-        this.tamaño=0;
-    }
-    AgregarDato(dato){
-        let nuevoNodo= new Nodo(dato,null);
-        if (!this.inicio){
-            this.inicio=nuevoNodo;
-        }
-        else{
-            let actual=this.inicio;
-            while (actual.next){
-                actual=actual.next;
-            }
-            actual.next=nuevoNodo;
-        }
-        this.tamaño ++;
-    }
-    imp(){
-        let actual=this.inicio;
-        let resultado="";
-        if(!this.tamaño){
-            return null
-        }
-        for(let i=0;i<this.tamaño; i++){
-            resultado=resultado + actual.dato + "->";
-            actual=actual.next;
-        }
-        return resultado
-    }
 
-
-}
-
-
-let g= new Grafo([])
-g.addVertex(0)
-g.addVertex(1)
-g.addVertex(2)
-
-g.addEdge(0,1)
-g.addEdge(0,2)
-g.addEdge(1,2)
-g.addEdge(2,0)
-
-g.fill()
+let g= new Grafo([
+        [0,1,0,0],
+        [1,0,1,0],
+        [0,0,0,1],
+        [0,1,0,0],
+])
 g.imprimir()
-
-g.list(3)
+g.list(1)

@@ -41,24 +41,6 @@ class Grafo {
     tamaño() {//order
         console.log(this.n.length)
     }
-
-    removeEdge(i, j) {
-        this.n[i][j] = 0
-    }
-
-    size() {
-        let c = 0
-        let a = this.toString()
-        for (let i = 0; i < a.length; i++) {
-            for (let j = 0; j < s.length; j++) {
-                if (s[i][j] === 1)
-                    c++
-                console.log(s)
-            }
-        }
-        console.log(c)
-    }
-
 }
 let g= new Grafo([])
 g.addVertex(0)
@@ -70,12 +52,6 @@ g.addEdge(0,2)
 g.addEdge(1,2)
 g.addEdge(2,0)
 
-g.fill()
-g.imprimir()
-g.size()
-
-//g.removeEdge(0,2)
-g.removeEdge(1,2)
 g.fill()
 g.imprimir()
 g.tamaño()

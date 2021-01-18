@@ -1,31 +1,3 @@
-class Gexample{
-    getloopy(){
-        return [
-            [1,1]
-                [1,0]
-        ]
-    }
-    cnew(){
-        return []
-    }
-    undirected(){
-        return[
-            [0,1,0,0]
-                [1,0,1,1]
-                [0,1,0,1]
-                [0,1,1,0]
-        ]
-    }
-    directed(){
-        return[
-            [0,1,0,0]
-                [0,0,1,0]
-                [0,0,0,1]
-                [0,1,0,0]
-        ]
-    }
-}
-
 class Grafo{
     constructor(o) {
         this.n=o
@@ -73,7 +45,6 @@ class Grafo{
         }
     }
 }
-let g= new Grafo([])
 g.addVertex(0)
 g.addVertex(1)
 g.addVertex(2)

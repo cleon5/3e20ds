@@ -2,11 +2,9 @@ class Grafo {
     constructor(o) {
         this.n = o
     }
-
     addVertex(v) {
         this.n[v] = 0
     }
-
     addEdge(e, f) {
         if (typeof (this.n[e] === "number")) {
             this.n[e] = []
@@ -14,14 +12,6 @@ class Grafo {
         this.n[e][f] = 1
     }
 
-    fill() {
-        for (let i = 0; i < this.n.length; i++) {
-            for (let j = 0; j < this.n.length; j++) {
-                if (this.n[i][j] === undefined)
-                    this.n[i][j] = 0;
-            }
-        }
-    }
 
     toString() {
         let s = "\n"
@@ -38,43 +28,19 @@ class Grafo {
         console.log(this.toString())
     }
 
-    tamaño() {//order
-        console.log(this.n.length)
-    }
-
     removeEdge(i, j) {
         this.n[i][j] = 0
-    }
+        g.imprimir()
+        console.log("Arco "+i +" - " +j+" removido")
 
-    size() {
-        let c = 0
-        let a = this.toString()
-        for (let i = 0; i < a.length; i++) {
-            for (let j = 0; j < s.length; j++) {
-                if (s[i][j] === 1)
-                    c++
-                console.log(s)
-            }
-        }
-        console.log(c)
     }
-
 }
-let g= new Grafo([])
-g.addVertex(0)
-g.addVertex(1)
-g.addVertex(2)
-
-g.addEdge(0,1)
-g.addEdge(0,2)
-g.addEdge(1,2)
-g.addEdge(2,0)
-
-g.fill()
+let g= new Grafo([
+    [0,1,0,0],
+    [0,0,1,0],
+    [0,0,0,1],
+    [0,1,0,0],])
 g.imprimir()
-g.size()
 
 g.removeEdge(1,2)
-g.fill()
-g.imprimir()
-g.tamaño()
+
