@@ -4,10 +4,10 @@ class SacaColumna {
     }
 
     columna(x) {
-        for (let i = 0; i < matriz.length; i++){
+        for (let i = 0; i < matriz.length ; i++){
             console.log(matriz[i][x]);
         }
-        return colum
+        return
     }
 }
 let matriz = [
