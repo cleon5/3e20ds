@@ -74,7 +74,6 @@ class Grafo{
                 l.AgregarDato(i)
             }
             else{
-                console.log(a)
             }
         }
         console.log(l.imp())
